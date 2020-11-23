@@ -17,6 +17,18 @@ class App extends Component {
             </div>
         );
     }
+
+    componentDidMount() {
+        this.intervalId = setInterval(() => {
+            this.setState({
+                time: new Date()
+            })
+        }, 1*1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.intervalId);
+    }
     getTimeString() {
         const currTime = this.state.time;
         const [hours, minutes, seconds] = [
