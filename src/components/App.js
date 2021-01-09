@@ -80,7 +80,7 @@ class App extends Component {
     componentDidMount(){
         this.intervalId=setInterval(()=>{
             this.setState({
-                time:new Date()
+                time:new Date().toLocaleString()
             })
         },1*1000)
     }
